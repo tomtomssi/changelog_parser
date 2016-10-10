@@ -47,6 +47,9 @@ Individual changes should be prefixed with **one** hyphen (-)
 ```
 
 ```md
+
+An example CHANGELOG.md file:
+
 # Example changelog
 
 ## [x.y.z]
