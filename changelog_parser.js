@@ -4,7 +4,7 @@
 var fs = require('fs');
 var versions = [];
 var fileContent;
-var lines = fileContent.split('\n');
+var lines;
 var version_rx = /^#{2}(\s).+/;
 var header_rx = /^#{3}(\s).+/;
 var item_rx = /^-(\s).+/;
@@ -20,6 +20,7 @@ exports.toJSON = function (path_to_changelog) {
     var line;
     var versionBlock;
     fileContent = fs.readFileSync(path_to_changelog, "utf8");
+    lines = fileContent.split('\n');
 
     if (lines && lines.length > 0) {
         json_changelog.title = lines[0];
@@ -126,9 +127,10 @@ function getItemsInChange(changeBlock) {
 function getRange(lineNumber, regex, block) {
     for (lineNumber += 1; lineNumber < lines.length; ++lineNumber) {
         if (lineNumber === lines.length - 1) {
-            block.end = lineNumber;
+            block.end = lines.length;
             break;
         }
+
         if (regex.test(lines[lineNumber])) {
             block.end = lineNumber - 1;
             break;
