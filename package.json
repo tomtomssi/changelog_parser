@@ -1,0 +1,24 @@
+{
+  "name": "changelog_parser",
+  "version": "0.0.1",
+  "description": " Parsers a changelog into JSON",
+  "main": "changelog_parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtomssi/changelog_parser.git"
+  },
+  "keywords": [
+    "changelog",
+    "json",
+    "parser"
+  ],
+  "author": "Tatu Solla <tatu.solla@gmail.com> (https://github.com/tomtomssi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomtomssi/changelog_parser/issues"
+  },
+  "homepage": "https://github.com/tomtomssi/changelog_parser#readme"
+}
