@@ -3,7 +3,7 @@
 
 var fs = require('fs');
 var versions = [];
-var fileContent = fs.readFileSync("CHANGELOG.md", "utf8");
+var fileContent;
 var lines = fileContent.split('\n');
 var version_rx = /^#{2}(\s).+/;
 var header_rx = /^#{3}(\s).+/;
@@ -11,68 +11,69 @@ var item_rx = /^-(\s).+/;
 var version_number_rx = /(\d|[a-zA-Z]).(\d|[a-zA-Z]).(\d|[a-zA-Z])/;
 var parsed_changelog = '';
 var json_changelog = {
-  title: null,
-  versions: versions
+    title: null,
+    versions: versions
 };
 
-exports.toJSON = function () {
+exports.toJSON = function (path_to_changelog) {
     var i;
     var line;
     var versionBlock;
+    fileContent = fs.readFileSync(path_to_changelog, "utf8");
 
     if (lines && lines.length > 0) {
-      json_changelog.title = lines[0];
+        json_changelog.title = lines[0];
 
-      for (i = 0; i < lines.length; ++i) {
-          line = lines[i];
+        for (i = 0; i < lines.length; ++i) {
+            line = lines[i];
 
-          if (version_rx.test(line)) {
-              versionBlock = getVersion(i);
-              versions.push(versionBlock);
-              getChanges(versionBlock);
-          }
-      }
+            if (version_rx.test(line)) {
+                versionBlock = getVersion(i);
+                versions.push(versionBlock);
+                getChanges(versionBlock);
+            }
+        }
     }
 
     return json_changelog;
 };
 
 exports.toChangelog = function (json) {
-  parsed_changelog = json.title + '\n\n';
+    parsed_changelog = json.title + '\n\n';
 
-  return compileVersions(json);
+    return compileVersions(json);
 };
 
 function compileVersions(json) {
-  var i;
+    var i;
 
-  for (i = 0; i < json.versions.length; ++i) {
-    parsed_changelog += json.versions[i].version + '\n\n';
+    for (i = 0; i < json.versions.length; ++i) {
+        parsed_changelog += json.versions[i].version + '\n\n';
 
-    compileChanges(json.versions[i]);
-  }
+        compileChanges(json.versions[i]);
+    }
 
-  return parsed_changelog;
+    return parsed_changelog;
 }
 
 function compileChanges(version) {
-  var i;
+    var i;
 
-  for (i = 0; i < version.changes.length; ++i) {
-    parsed_changelog += version.changes[i].change + '\n';
+    for (i = 0; i < version.changes.length; ++i) {
+        parsed_changelog += version.changes[i].change + '\n';
 
-    compileChangeItems(version.changes[i].items);
-  }
+        compileChangeItems(version.changes[i].items);
+    }
 }
 
 function compileChangeItems(changeItems) {
-  var i;
+    var i;
 
-  for (i = 0; i < changeItems.length; ++i) {
-    parsed_changelog += changeItems[i] + '\n';
-  }
+    for (i = 0; i < changeItems.length; ++i) {
+        parsed_changelog += changeItems[i] + '\n';
+    }
 
-  parsed_changelog += '\n';
+    parsed_changelog += '\n';
 }
 
 function getVersion(lineNumber) {
