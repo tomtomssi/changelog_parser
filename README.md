@@ -279,6 +279,13 @@ Parsing the example changelog will yield the following JSON:
 ```
 Parsing the above JSON will result in the CHANGELOG.md file it was created from
 
+## Testing
+
+To run all tests use the following command:
+
+```js
+npm test
+```
 ## License
 
 [MIT](LICENSE.md)
