@@ -15,14 +15,13 @@ var parsed_changelog = '';
 exports.toJSON = function (path_to_changelog) {
     var json_changelog = {
         title: null,
-        versions: versions
+        versions: []
     };
     var i;
     var line;
     var versionBlock;
     fileContent = fs.readFileSync(path_to_changelog, "utf8");
     lines = fileContent.split('\n');
-    versions = [];
 
     if (lines && lines.length > 0) {
         json_changelog.title = lines[0];
@@ -32,7 +31,7 @@ exports.toJSON = function (path_to_changelog) {
 
             if (version_rx.test(line)) {
                 versionBlock = getVersion(i);
-                versions.push(versionBlock);
+                json_changelog.versions.push(versionBlock);
                 getChanges(versionBlock);
             }
         }
