@@ -1,59 +1,10 @@
-# Example changelog
+# Changelog
 
-## [x.y.z]
-
-### Added
-- A changelog!
-
-### Fixed
-- UI had some terrible bugs
-
-### Removed
-
-### Changed
-
-## [2.9.0](http://www.google.fi/)
+## [0.0.3](https://github.com/tomtomssi/changelog_parser/tree/v0.0.3)
 
 ### Added
-- Added a cool new feature
-- Files can now be loaded from the Internet
-
-### Changed
-- Localization IDs
+- This changelog
 
 ### Fixed
-- This annoying bug
-- That annoying bug
-- A bug that you had but no one else
-- A bug that everyone had but not you
-
-### Removed
-- That thing no one used until soon
-
-## [2.8.9](http://www.google.fi/)
-
-### Fixed
-- Simple bugfix
-
-## [2.8.8](http://www.google.fi/)
-
-### Fixed
-- Critical bug
-- Not so critical bug
-
-### Changed
-- Name of bug parser
-
-## [2.8.0](http://www.google.fi/)
-
-### Added
-- Feature 1
-- Feature 2
-
-### Fixed
-- Feature X had a bug that caused more bugs
-- Java internals
-- JavaScript web development
-
-### Removed
-- COBOL HTML files
+- The changelog no longer has to end in a newline
+- Carriage returns are no longer shown in the JSON
