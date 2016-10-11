@@ -80,7 +80,7 @@ function compileChangeItems(changeItems) {
 function getVersion(lineNumber) {
     var versionBlock = {
         version_number: lines[lineNumber].match(version_number_rx)[0],
-        version: lines[lineNumber],
+        version: lines[lineNumber].match(version_rx),
         start: lineNumber,
         end: null,
         changes: []
@@ -91,7 +91,7 @@ function getVersion(lineNumber) {
 
 function compileChangeBlock(lineNumber) {
     var changeBlock = {
-        change: lines[lineNumber],
+        change: lines[lineNumber].match(header_rx),
         items: [],
         start: lineNumber,
         end: null
@@ -118,8 +118,8 @@ function getItemsInChange(changeBlock) {
     var items = [];
 
     for (i = changeBlock.start + 1; i < changeBlock.end; ++i) {
-        if (item_rx.test(lines[i])) {
-            changeBlock.items.push(lines[i]);
+        if (item_rx.test(lines[i]) && lines[i].length > 0) {
+            changeBlock.items.push(lines[i].match(item_rx));
         }
     }
 }
