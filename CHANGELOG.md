@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.6](https://github.com/tomtomssi/changelog_parser/tree/v0.0.6)
+
+### Removed
+- Start and end properties from versions and changes
+
 ## [0.0.5](https://github.com/tomtomssi/changelog_parser/tree/v0.0.5)
 
 ### Fixed
