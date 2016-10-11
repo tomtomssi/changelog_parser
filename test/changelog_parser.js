@@ -28,7 +28,7 @@ describe('#parser', function () {
     var i;
 
     for (i = 0; i < json_changelog.versions.length; ++i) {
-      expect(json_changelog.versions[i]).to.have.all.keys('version_number', 'version', 'changes', 'start', 'end');
+      expect(json_changelog.versions[i]).to.have.all.keys('version_number', 'version', 'changes');
     }
   });
 
@@ -40,7 +40,7 @@ describe('#parser', function () {
       changes = json_changelog.versions[i].changes;
 
       for (j = 0; j < changes.length; ++j) {
-        expect(changes[j]).to.have.all.keys('change', 'items', 'start', 'end');
+        expect(changes[j]).to.have.all.keys('change', 'items');
       }
     }
   });

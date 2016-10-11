@@ -113,6 +113,9 @@ function getChanges(versionBlock) {
             versionBlock.changes.push(changeBlock);
         }
     }
+
+    delete versionBlock.start;
+    delete versionBlock.end;
 }
 
 function getItemsInChange(changeBlock) {
@@ -123,6 +126,9 @@ function getItemsInChange(changeBlock) {
             changeBlock.items.push(lines[i].match(item_rx)[0]);
         }
     }
+
+    delete changeBlock.start;
+    delete changeBlock.end;
 }
 
 function getRange(lineNumber, regex, block) {
