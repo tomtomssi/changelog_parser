@@ -10,9 +10,9 @@ describe('#parser', function () {
   beforeEach(function () {
     json_changelog = parser.toJSON(changelogPath);
   });
-  
+
   it('TESTLOG should have 60 lines', function () {
-    log = fs.readFileSync('./test/TESTLOG.md', 'utf8').split('\n');    
+    log = fs.readFileSync('./test/TESTLOG.md', 'utf8').split('\n');
     log.length.should.equal(60);
   });
 
@@ -140,7 +140,7 @@ describe('#parser', function () {
 
     generated_changelog.length.should.equal(229);
     changelog_to_array.length.should.equal(26);
-    
+
     changelog_to_array[0].should.equal('# Example changelog');
     changelog_to_array[2].should.equal('## [1.0.0]');
     changelog_to_array[4].should.equal('### Added');
@@ -158,5 +158,29 @@ describe('#parser', function () {
     changelog_to_array[21].should.equal('### Removed');
     changelog_to_array[22].should.equal('- Removed this');
     changelog_to_array[23].should.equal('- Removed that');
+  });
+
+  it('generated changelog has a newline at the end of file', function () {
+    var json = {
+      title: '# Example changelog',
+      versions: [
+        {
+          version_number: '0.1.0',
+          version: '## [0.1.0]',
+          changes: [
+            {
+              change: '### Added',
+              items: ['- Test item 1']
+            }
+          ]
+        }
+      ]
+    };
+
+    var generated_changelog = parser.toChangelog(json);
+    var changelog_to_array = generated_changelog.split('\n');
+    var last_line = changelog_to_array[changelog_to_array.length - 1];
+
+    last_line.length.should.equal(0);
   });
 });
