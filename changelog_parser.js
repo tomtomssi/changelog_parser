@@ -2,7 +2,7 @@
 'use strict';
 
 var fs = require('fs');
-var versions = [];
+var versions;
 var fileContent;
 var lines;
 var version_rx = /^#{2}(\s).+/;
@@ -10,17 +10,19 @@ var header_rx = /^#{3}(\s).+/;
 var item_rx = /^-(\s).+/;
 var version_number_rx = /(\d|[a-zA-Z]).(\d|[a-zA-Z]).(\d|[a-zA-Z])/;
 var parsed_changelog = '';
-var json_changelog = {
-    title: null,
-    versions: versions
-};
+
 
 exports.toJSON = function (path_to_changelog) {
+    var json_changelog = {
+        title: null,
+        versions: versions
+    };
     var i;
     var line;
     var versionBlock;
     fileContent = fs.readFileSync(path_to_changelog, "utf8");
     lines = fileContent.split('\n');
+    versions = [];
 
     if (lines && lines.length > 0) {
         json_changelog.title = lines[0];
