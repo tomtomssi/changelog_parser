@@ -115,161 +115,123 @@ Parsing the example changelog will yield the following JSON:
 
 ```js
 {
-  "title": "# Example changelog\r",
+  "title": "# Example changelog",
   "versions": [
     {
       "version_number": "x.y.z",
-      "version": "## [x.y.z]\r",
-      "start": 2,
-      "end": 13,
+      "version": "## [x.y.z]",
       "changes": [
         {
-          "change": "### Added\r",
+          "change": "### Added",
           "items": [
-            "- A changelog!\r"
-          ],
-          "start": 4,
-          "end": 6
+            "- A changelog!"
+          ]
         },
         {
-          "change": "### Fixed\r",
+          "change": "### Fixed",
           "items": [
-            "- UI had some terrible bugs\r"
-          ],
-          "start": 7,
-          "end": 9
+            "- UI had some terrible bugs"
+          ]
         },
         {
-          "change": "### Removed\r",
-          "items": [],
-          "start": 10,
-          "end": 11
+          "change": "### Removed",
+          "items": []
         },
         {
-          "change": "### Changed\r",
-          "items": [],
-          "start": 12,
-          "end": 15
+          "change": "### Changed",
+          "items": []
         }
       ]
     },
     {
       "version_number": "2.9.0",
-      "version": "## [2.9.0](http://www.google.fi/)\r",
-      "start": 14,
-      "end": 31,
+      "version": "## [2.9.0](http://www.google.fi/)",
       "changes": [
         {
-          "change": "### Added\r",
+          "change": "### Added",
           "items": [
-            "- Added a cool new feature\r",
-            "- Files can now be loaded from the Internet\r"
-          ],
-          "start": 16,
-          "end": 19
+            "- Added a cool new feature",
+            "- Files can now be loaded from the Internet"
+          ]
         },
         {
-          "change": "### Changed\r",
+          "change": "### Changed",
           "items": [
-            "- Localization IDs\r"
-          ],
-          "start": 20,
-          "end": 22
+            "- Localization IDs"
+          ]
         },
         {
-          "change": "### Fixed\r",
+          "change": "### Fixed",
           "items": [
-            "- This annoying bug\r",
-            "- That annoying bug\r",
-            "- A bug that you had but no one else\r",
-            "- A bug that everyone had but not you\r"
-          ],
-          "start": 23,
-          "end": 28
+            "- This annoying bug",
+            "- That annoying bug",
+            "- A bug that you had but no one else",
+            "- A bug that everyone had but not you"
+          ]
         },
         {
-          "change": "### Removed\r",
+          "change": "### Removed",
           "items": [
-            "- That thing no one used until soon\r"
-          ],
-          "start": 29,
-          "end": 33
+            "- That thing no one used until soon"
+          ]
         }
       ]
     },
     {
       "version_number": "2.8.9",
-      "version": "## [2.8.9](http://www.google.fi/)\r",
-      "start": 32,
-      "end": 36,
+      "version": "## [2.8.9](http://www.google.fi/)",
       "changes": [
         {
-          "change": "### Fixed\r",
+          "change": "### Fixed",
           "items": [
-            "- Simple bugfix\r"
-          ],
-          "start": 34,
-          "end": 38
+            "- Simple bugfix"
+          ]
         }
       ]
     },
     {
       "version_number": "2.8.8",
-      "version": "## [2.8.8](http://www.google.fi/)\r",
-      "start": 37,
-      "end": 45,
+      "version": "## [2.8.8](http://www.google.fi/)",
       "changes": [
         {
-          "change": "### Fixed\r",
+          "change": "### Fixed",
           "items": [
-            "- Critical bug\r",
-            "- Not so critical bug\r"
-          ],
-          "start": 39,
-          "end": 42
+            "- Critical bug",
+            "- Not so critical bug"
+          ]
         },
         {
-          "change": "### Changed\r",
+          "change": "### Changed",
           "items": [
-            "- Name of bug parser\r"
-          ],
-          "start": 43,
-          "end": 47
+            "- Name of bug parser"
+          ]
         }
       ]
     },
     {
       "version_number": "2.8.0",
-      "version": "## [2.8.0](http://www.google.fi/)\r",
-      "start": 46,
-      "end": 60,
+      "version": "## [2.8.0](http://www.google.fi/)",
       "changes": [
         {
-          "change": "### Added\r",
+          "change": "### Added",
           "items": [
-            "- Feature 1\r",
-            "- Feature 2\r"
-          ],
-          "start": 48,
-          "end": 51
+            "- Feature 1",
+            "- Feature 2"
+          ]
         },
         {
-          "change": "### Fixed\r",
+          "change": "### Fixed",
           "items": [
-            "- Feature X had a bug that caused more bugs\r",
-            "- Java internals\r",
-            "- JavaScript web development\r"
-          ],
-          "start": 52,
-          "end": 56
+            "- Feature X had a bug that caused more bugs",
+            "- Java internals",
+            "- JavaScript web development"
+          ]
         },
         {
-          "change": "### Removed\r",
+          "change": "### Removed",
           "items": [
-            "- COBOL HTML files\r"
-          ],
-          "start": 57,
-          "end": 60
+            "- COBOL HTML files"
+          ]
         }
       ]
     }
