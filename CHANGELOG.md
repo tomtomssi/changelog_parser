@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.5](https://github.com/tomtomssi/changelog_parser/tree/v0.0.5)
+
+### Fixed
+- Version title and change title are now strings instead of arrays
+
 ## [0.0.4](https://github.com/tomtomssi/changelog_parser/tree/v0.0.4)
 
 ### Fixed
