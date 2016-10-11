@@ -95,4 +95,68 @@ describe('#parser', function () {
 
     json_changelog.versions[4].changes[2].items[0].should.equal('- COBOL HTML files');
   });
+
+  it('a changelog can be created from properly formatted JSON', function () {
+    var json = {
+      title: '# Example changelog',
+      versions: [
+        {
+          version_number: '1.0.0',
+          version: '## [1.0.0]',
+          changes: [
+            {
+              change: '### Added',
+              items: ['- Test item 1', '- Test item 2']
+            },
+            {
+              change: '### Fixed',
+              items: ['- Fix 1']
+            },
+            {
+              change: '### Removed',
+              items: ['- Removed this', '- Removed that', '- Removed them']
+            }
+          ]
+        },
+        {
+          version_number: '0.1.0',
+          version: '## [0.1.0]',
+          changes: [
+            {
+              change: '### Added',
+              items: ['- Test item 1']
+            },
+            {
+              change: '### Removed',
+              items: ['- Removed this', '- Removed that']
+            }
+          ]
+        }
+      ]
+    };
+
+    var generated_changelog = parser.toChangelog(json);
+    var changelog_to_array = generated_changelog.split('\n');
+
+    generated_changelog.length.should.equal(229);
+    changelog_to_array.length.should.equal(26);
+    
+    changelog_to_array[0].should.equal('# Example changelog');
+    changelog_to_array[2].should.equal('## [1.0.0]');
+    changelog_to_array[4].should.equal('### Added');
+    changelog_to_array[5].should.equal('- Test item 1');
+    changelog_to_array[6].should.equal('- Test item 2');
+    changelog_to_array[8].should.equal('### Fixed');
+    changelog_to_array[9].should.equal('- Fix 1');
+    changelog_to_array[11].should.equal('### Removed');
+    changelog_to_array[12].should.equal('- Removed this');
+    changelog_to_array[13].should.equal('- Removed that');
+    changelog_to_array[14].should.equal('- Removed them');
+    changelog_to_array[16].should.equal('## [0.1.0]');
+    changelog_to_array[18].should.equal('### Added');
+    changelog_to_array[19].should.equal('- Test item 1');
+    changelog_to_array[21].should.equal('### Removed');
+    changelog_to_array[22].should.equal('- Removed this');
+    changelog_to_array[23].should.equal('- Removed that');
+  });
 });
