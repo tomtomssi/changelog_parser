@@ -3,9 +3,6 @@
   "version": "0.0.2",
   "description": " Parsers a changelog into JSON",
   "main": "changelog_parser.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomtomssi/changelog_parser.git"
