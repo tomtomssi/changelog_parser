@@ -87,4 +87,12 @@ describe('#parser', function () {
 
     json_changelog.versions[4].changes[2].items[0].should.equal('- COBOL HTML files');
   });
+
+  it('the JSON is parsed properly if a newline is present at the end of the changelog', function () {
+    json_changelog.versions.length.should.equal(5);
+
+    expect(json_changelog.versions[4].changes[2].items[0]).to.be.ok;
+
+    json_changelog.versions[4].changes[2].items[0].should.equal('- COBOL HTML files');
+  });
 });
