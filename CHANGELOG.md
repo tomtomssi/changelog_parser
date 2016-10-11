@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1](https://github.com/tomtomssi/changelog_parser/tree/v0.1.1)
+
+### Fixed
+- Versions should no longer end up undefined
+
 ## [0.1.0](https://github.com/tomtomssi/changelog_parser/tree/v0.1.0)
 
 ### Removed
