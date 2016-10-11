@@ -1,6 +1,6 @@
 {
   "name": "changelog_parser",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": " Parsers a changelog into JSON",
   "main": "changelog_parser.js",
   "repository": {
