@@ -1,6 +1,8 @@
 # changelog_parser
 
-Parses a changelog into JSON format. Can compile a changelog from JSON.
+- Can compile a changelog into JSON format 
+- Can compile a formatted changelog string from JSON
+- Can compile a JSON formatted changelog from a string
 
 Expects the changelog to follow [keepachangelog.com](http://keepachangelog.com/) guidelines
 
@@ -13,13 +15,16 @@ npm install changelog_parser
 ## Usage
 
 ```js
-var parser = require('changelog_parser');
+var parser = require('./changelog_parser');
 
 // Changelog to JSON
-var json_changelog = parser.toJSON('CHANGELOG.md');
+var json_changelog = parser.toJSON(pathToChangelogFile);
 
 // JSON formatted changelog to text
 var changelog = parser.toChangelog(json_changelog);
+
+// Changelog string to JSON
+var json_changelog = parser.toJSONFromString(changelogString);
 ```
 
 ## Format
