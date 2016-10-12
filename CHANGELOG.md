@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.0](https://github.com/tomtomssi/changelog_parser/tree/v1.0.0)
+
+### Added
+- A JSON representation of the changelog can be created from a string
+
 ## [0.1.1](https://github.com/tomtomssi/changelog_parser/tree/v0.1.1)
 
 ### Fixed
