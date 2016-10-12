@@ -183,4 +183,13 @@ describe('#parser', function () {
 
     last_line.length.should.equal(0);
   });
+
+  it('changelog created from a string should be defined', function () {
+    var noeofPath = './test/TESTLOG.md';
+
+    var json_changelog = parser.toJSON(noeofPath);
+    var new_changelog = parser.toChangelog(json_changelog);
+
+    parser.toJSONFromString(new_changelog).should.be.ok;
+  });
 });

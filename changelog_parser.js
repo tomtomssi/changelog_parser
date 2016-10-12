@@ -13,6 +13,24 @@ var parsed_changelog = '';
 
 
 exports.toJSON = function (path_to_changelog) {
+    fileContent = fs.readFileSync(path_to_changelog, "utf8");
+    
+    return compileJSON();
+};
+
+exports.toJSONFromString = function (changelogString) {
+    fileContent = changelogString;
+
+    return compileJSON();
+};
+
+exports.toChangelog = function (json) {
+    parsed_changelog = json.title + '\n\n';
+
+    return compileVersions(json);
+};
+
+function compileJSON() {
     var json_changelog = {
         title: null,
         versions: []
@@ -20,7 +38,7 @@ exports.toJSON = function (path_to_changelog) {
     var i;
     var line;
     var versionBlock;
-    fileContent = fs.readFileSync(path_to_changelog, "utf8");
+
     lines = fileContent.split('\n');
 
     if (lines && lines.length > 0) {
@@ -38,13 +56,7 @@ exports.toJSON = function (path_to_changelog) {
     }
 
     return json_changelog;
-};
-
-exports.toChangelog = function (json) {
-    parsed_changelog = json.title + '\n\n';
-
-    return compileVersions(json);
-};
+}
 
 function compileVersions(json) {
     var i;
