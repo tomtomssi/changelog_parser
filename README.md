@@ -15,7 +15,7 @@ npm install changelog_parser
 ## Usage
 
 ```js
-var parser = require('./changelog_parser');
+var parser = require('changelog_parser');
 
 // Changelog to JSON
 var json_changelog = parser.toJSON(pathToChangelogFile);
