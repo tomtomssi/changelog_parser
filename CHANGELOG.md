@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.1](https://github.com/tomtomssi/changelog_parser/tree/v1.0.2)
+
+## Fixed
+- A typo in the module description
+
 ## [1.0.0](https://github.com/tomtomssi/changelog_parser/tree/v1.0.0)
 
 ### Added
