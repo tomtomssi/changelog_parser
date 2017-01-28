@@ -7,7 +7,7 @@ var lines;
 var version_rx = /^#{2}(\s).+/;
 var header_rx = /^#{3}(\s).+/;
 var item_rx = /^-(\s).+/;
-var version_number_rx = /(\d|[a-zA-Z]).(\d|[a-zA-Z]).(\d|[a-zA-Z])/;
+var version_number_rx = /(\d+|[a-zA-Z]).(\d+|[a-zA-Z]).(\d+|[a-zA-Z])/;
 var parsed_changelog = '';
 
 
