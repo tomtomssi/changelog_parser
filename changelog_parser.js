@@ -2,7 +2,6 @@
 'use strict';
 
 var fs = require('fs');
-var versions;
 var fileContent;
 var lines;
 var version_rx = /^#{2}(\s).+/;
